@@ -1,0 +1,34 @@
+# autor: Guilherme Arantes
+# Data: 28/10/2024
+# Código: Baskara a, b, c
+
+# importando a biblioteca matemática para usar funções matemáticas
+import math  # O comando import permite utilizar a biblioteca math, que contém funções matemáticas úteis.
+
+# Solicitando ao usuário que digite os valores de a, b e c
+# a é o coeficiente quadrático
+a = float(input("Digite o valor de a: "))  # input() recebe a entrada do usuário como string, e float() converte para número decimal.
+# b é o coeficiente linear
+b = float(input("Digite o valor de b: "))  # Similar ao anterior, converte a entrada do usuário em um número decimal.
+# c é a constante
+c = float(input("Digite o valor de c: "))  # Novamente, converte a entrada para um número decimal.
+
+# Calculando o discriminante (delta) da equação do segundo grau
+# delta é usado para determinar o número e o tipo de raízes
+delta = b**2 - 4*a*c  # O discriminante é calculado com a fórmula delta = b² - 4ac.
+
+# Verificando o valor de delta para determinar o número de raízes
+if delta == 0:  # if verifica se a condição (delta igual a zero) é verdadeira.
+    # Caso em que há uma raiz dupla
+    raiz1 = (-b + math.sqrt(delta)) / (2 * a)  # Calcula a raiz única usando a fórmula de Bhaskara.
+    print("Essa equação tem a mesma raiz: ", raiz1)  # print() exibe uma mensagem e o valor da raiz na tela.
+else:  # else é executado se a condição do if não for verdadeira.
+    if delta < 0:  # Verifica se delta é menor que zero.
+        # Caso em que não há raízes reais
+        print("A equação não tem raízes reais")  # Exibe uma mensagem informando que não existem raízes reais.
+    else:  # Caso em que delta é maior que zero.
+        # Caso em que há duas raízes reais
+        raiz1 = (-b + math.sqrt(delta)) / (2 * a)  # Calcula a primeira raiz usando a fórmula de Bhaskara.
+        raiz2 = (-b - math.sqrt(delta)) / (2 * a)  # Calcula a segunda raiz.
+        print("A primeira raiz da equação é: ", raiz1)  # Exibe a primeira raiz.
+        print("A segunda raiz da equação é: ", raiz2)  # Exibe a segunda raiz.
